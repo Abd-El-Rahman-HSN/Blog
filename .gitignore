@@ -4,14 +4,70 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+# Ignore .env
+.env
 # Ignore bundler config.
 /.bundle
-
-# Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
 /log/*
 !/log/.keep
 /tmp
+/public/dev-assets
+/public/system
+/public/users
+/public/posts
+/public/testimonials
+
+# Ignore the default SQLite database.
+/db/*.sqlite3
+/db/sphinx
+/db/sphinx/*
+/db/sphinx/development
+/db/sphinx/development/*
+/db/sphinx/staging
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.*.swp
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+
+#config files
+#/config/application.yml
+#config/application.yml
+*.todo
+*.rbc
+*.sassc
+.sass-cache
+capybara-*.html
+.rspec
+.rvmrc
+/.idea
+/.bundle
+/vendor/bundle
+/log/*
+/tmp/*
+/db/*.sqlite3
+/db/sphinx/development/*
+/public/system/*
+/public/images/*
+/public/uploads/*
+/pulbic/assets/*
+/spec/tmp/*
+**.orig
+rerun.txt
+pickle-email-*.html
+.project
+/log
+/tmp
+/public/system
+/vendor/cache/*
+
+# Ignore byebug history
+.byebug_history
