@@ -24,8 +24,7 @@ RailsAdmin.config do |config|
       field :image
       field :body, :ck_editor
       field :category do
-        inline_add false
-        inline_edit false
+        nested_form false
       end
       # For RailsAdmin < 0.5.0
       # field :description do
