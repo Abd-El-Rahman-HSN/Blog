@@ -19,10 +19,13 @@
 
 	<!--form-group-->
 	<div class="form-group required">
-
-		<%= select_tag(:category_id, options_for_select(@category) )%>
-
+		<%= f.label :category_id, class: 'form-control-label required' do %>
+			Lecture
+			<abbr title="required">*</abbr>
+		<% end %>
+		<%= f.select :category_id, options_from_collection_for_select(Category.reorder('name asc'), :id, :name, @post.category_id), {:include_blank => true}, {required: 'true', class: 'form-control select required select2', placeholder: "Select user"} %>
 	</div><!--form-group-->
+
 
 	<br>
 	<%= f.submit %>

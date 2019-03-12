@@ -1,12 +1,47 @@
 RailsAdmin.config do |config|
 
+  config.actions do
+  end
 
+  config.model Comment do
+    edit do
+      field :name
+      field :body
+    end
+  end
+  config.model Category do
+    edit do
+      field :name
+    end
+  end
   config.model Post do
+    list do
+      exclude_fields :body
+    end
     edit do
       # For RailsAdmin >= 0.5.0
       field :title
       field :image
       field :body, :ck_editor
+      field :category do
+        inline_add false
+        inline_edit false
+      end
+      # For RailsAdmin < 0.5.0
+      # field :description do
+      #   ckeditor true
+      # end
+    end
+  end
+  config.model User do
+    list do
+      exclude_fields :reset_password_sent_at, :remember_created_at
+    end
+    edit do
+      # For RailsAdmin >= 0.5.0
+      exclude_fields :reset_password_sent_at, :remember_created_at, :sign_in_count,
+                     :current_sign_in_at, :last_sign_in_at, :current_sign_in_ip,
+                     :last_sign_in_ip
       # For RailsAdmin < 0.5.0
       # field :description do
       #   ckeditor true
